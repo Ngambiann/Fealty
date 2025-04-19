@@ -1,4 +1,5 @@
-import 'package:fealty/pages/authpages/signin.dart';
+import 'package:fealty/components/buttons/landingpagebuttons.dart';
+import 'package:fealty/pages/authpages/login.dart';
 import 'package:fealty/pages/authpages/signup.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,6 @@ class _LandingState extends State<Landing> {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
-          
           children: [
             //Slogan text
             const Text(
@@ -39,33 +39,23 @@ class _LandingState extends State<Landing> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 //Signup button
-                ElevatedButton(
-                    style: const ButtonStyle(
-                        backgroundColor: WidgetStatePropertyAll(Colors.teal)),
-                    onPressed: () {
+                Landingpagebuttons(
+                    onpressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => const Signup()));
                     },
-                    child: const Text(
-                      "Sign Up",
-                      style: TextStyle(color: Colors.black),
-                    )),
+                    buttonname: "Sign up"),
                 const SizedBox(width: 50),
-                //Sign in button
-                ElevatedButton(
-                    style: const ButtonStyle(
-                        backgroundColor: WidgetStatePropertyAll(Colors.teal)),
-                    onPressed: () {
+                //Login button
+                Landingpagebuttons(
+                    onpressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const Signin()));
+                          builder: (context) => const Login()));
                     },
-                    child: const Text(
-                      "Sign In",
-                      style: TextStyle(color: Colors.black),
-                    )),
+                    buttonname: "Login")
               ],
             ),
-            const SizedBox(height: 30),
+          const SizedBox(height: 50),
           ],
         ),
       ),

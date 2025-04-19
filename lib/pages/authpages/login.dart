@@ -5,14 +5,14 @@ import 'package:fealty/pages/authpages/signup.dart';
 import 'package:fealty/pages/mainpages/homepage.dart';
 import 'package:flutter/material.dart';
 
-class Signin extends StatefulWidget {
-  const Signin({super.key});
+class Login extends StatefulWidget {
+  const Login({super.key});
 
   @override
-  State<Signin> createState() => _LoginState();
+  State<Login> createState() => _LoginState();
 }
 
-class _LoginState extends State<Signin> {
+class _LoginState extends State<Login> {
   final TextEditingController emailAddressController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 

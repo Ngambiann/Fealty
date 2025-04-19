@@ -1,7 +1,7 @@
 import 'package:fealty/components/buttons/authpgsbuttons.dart';
 import 'package:fealty/components/textfields/authtextfields.dart';
 import 'package:fealty/components/texts/authheaders.dart';
-import 'package:fealty/pages/authpages/signin.dart';
+import 'package:fealty/pages/authpages/login.dart';
 import 'package:fealty/pages/mainpages/homepage.dart';
 import 'package:flutter/material.dart';
 
@@ -72,10 +72,10 @@ class _SignupState extends State<Signup> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Already have an account",style: TextStyle(color: Colors.black),),
+                  const Text("Already have an account?",style: TextStyle(color: Colors.black),),
                   TextButton(onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Signin()));
-                  }, child: const Text("Sign In",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w900),))
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Login()));
+                  }, child: const Text("Login",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w900),))
                 ],
               )
             ],
