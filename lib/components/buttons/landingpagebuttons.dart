@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Landingpagebuttons extends StatelessWidget {
   final String buttonname;
+  // ignore: prefer_typing_uninitialized_variables
   final onpressed;
   const Landingpagebuttons({super.key, required this.onpressed,required this.buttonname});
 

@@ -55,7 +55,7 @@ class _LoginState extends State<Login> {
           Authpgsbuttons(
               buttonname: "Send code",
               onPressed: () {
-                Navigator.of(context).push(
+                Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => const Homepage()));
               }),
           const SizedBox(

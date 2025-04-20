@@ -65,7 +65,7 @@ class _SignupState extends State<Signup> {
               Authpgsbuttons(
                   buttonname: "Send Code",
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) => const Homepage()));
                   }),
 //Sign in option
