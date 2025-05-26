@@ -1,8 +1,8 @@
 import 'package:fealty/components/buttons/authpgsbuttons.dart';
 import 'package:fealty/components/textfields/authtextfields.dart';
 import 'package:fealty/components/texts/authheaders.dart';
+import 'package:fealty/pages/authpages/authcode.dart';
 import 'package:fealty/pages/authpages/login.dart';
-import 'package:fealty/pages/mainpages/homepage.dart';
 import 'package:flutter/material.dart';
 
 class Signup extends StatefulWidget {
@@ -66,7 +66,7 @@ class _SignupState extends State<Signup> {
                   buttonname: "Send Code",
                   onPressed: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => const Homepage()));
+                        builder: (context) => const Authcode()));
                   }),
 //Sign in option
               Row(
