@@ -1,6 +1,7 @@
-import 'package:fealty/pages/secondarypages/notifications.dart';
-import 'package:fealty/pages/secondarypages/profileview.dart';
-import 'package:fealty/pages/secondarypages/settings.dart';
+import 'package:fealty/pages/secpages/notifications.dart';
+import 'package:fealty/pages/secpages/profileview.dart';
+import 'package:fealty/pages/secpages/settings.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -15,7 +16,9 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(245, 255, 255, 255),
       appBar: AppBar(
+       backgroundColor: const Color.fromARGB(245, 255, 255, 255),
         actions: [
           IconButton(
               onPressed: () {
@@ -41,69 +44,190 @@ class _HomepageState extends State<Homepage> {
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(20),
         children: [
-          const Text("Recent Activity:"),
           Column(
             children: [
               Row(
                 children: [
+//Rent collection card
                   Container(
+                    width: 175,
+                    height: 140,
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black),
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    width: 180,
-                    height: 310,
+                    child: const Column(
+                      children: [
+                        SizedBox(height:5),
+                        Row(
+                          children: [
+                             SizedBox(width:10),
+                            Text("Rent Collected",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                )),
+                            SizedBox(width: 20),
+                            Icon(
+                              PhosphorIconsFill.wallet,
+                              color: Colors.black,
+                              size: 25,
+                            ),
+                          ],
+                        )
+                       
+                      ],
+                    ),
                   ),
-                  const SizedBox(
-                    width: 15,
+                  const SizedBox(width: 25),
+//outstanding payments card
+                  Container(
+                    width: 175,
+                    height: 140,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child:const Column(
+                      children: [
+                        SizedBox(height:5),
+                        Row(
+                          children: [
+                             SizedBox(width:10),
+                            Text("Outstanding",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                )),
+                            SizedBox(width: 30),
+                            Icon(
+                              PhosphorIconsFill.clock,
+                              color: Colors.black,
+                              size: 25,
+                            ),
+                          ],
+                        )
+                       
+                      ],
+                    ),
                   ),
-                  Column(
+                ],
+              ),
+              const SizedBox(height: 30),
+              Row(
+                children: [
+//total payments due card
+                 Container(
+                    width: 175,
+                    height: 140,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Column(
+                      children: [
+                        SizedBox(height:5),
+                        Row(
+                          children: [
+                             SizedBox(width:10),
+                            Text("Total Rent Due",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                )),
+                            SizedBox(width: 20),
+                            Icon(
+                              PhosphorIconsFill.calendarDots,
+                              color: Colors.black,
+                              size: 25,
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                   const SizedBox(width: 25),
+                  
+//Property number card
+                  Container(
+                    width: 175,
+                    height: 140,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Column(
+                      children: [
+                        SizedBox(height:5),
+                        Row(
+                          children: [
+                             SizedBox(width:10),
+                            Text("Properties",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                )),
+                            SizedBox(width: 40),
+                            Icon(
+                              PhosphorIconsFill.buildingApartment,
+                              color: Colors.black,
+                              size: 25,
+                            ),
+                          ],
+                        )
+                       
+                      ],
+                    ),
+                  ),
+            ],
+          ),
+          const SizedBox(height: 30),
+          const Text("Payment status:",
+          textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      )),
+//Payment status card
+          Container(
+            height:400,
+            width: 381,
+            margin: const EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+            ),
+              child:  Column(
+                children: [
+                  Row(
                     children: [
-                      const Text("Amount Collected:"),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
+                      const Text("June 2025 rent collection status:",
+                          style: TextStyle(
+                            color: Color.fromARGB(224, 157, 157, 157),
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                          )),
+                       const SizedBox(width: 100),
+                       Text.rich(TextSpan(
+                        recognizer: TapGestureRecognizer(),
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
                         ),
-                        width: 191,
-                        height: 140,
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      const Text("Properties:"),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        width: 191,
-                        height: 140,
-                      )
+                        text: "See all"
+                       ))
                     ],
                   )
                 ],
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text("Payment Status:"),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black),
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                width: 400,
-                height: 314,
-              )
-            ],
+          
           )
+            ]) 
+           
         ],
       ),
     );
